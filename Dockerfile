@@ -29,11 +29,15 @@ rm /tmp/task.tar.gz
 
 wget https://github.com/bdd/runitor/releases/download/v${RUNITOR_VERSION}/runitor-v${RUNITOR_VERSION}-linux-amd64 -O /usr/bin/runitor
 
+chmod +x /usr/bin/task /usr/bin/runitor
+
 EOF
 
 VOLUME [ "/tasks" ]
 VOLUME [ "/config" ]
 
+WORKDIR /tasks
+
 ENTRYPOINT ["/usr/bin/ofelia"]
 
-CMD ["daemon", "--docker", "--config", "/config/config.ini"]
+CMD ["daemon", "--config", "/config/config.ini"]
