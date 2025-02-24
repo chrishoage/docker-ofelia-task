@@ -5,7 +5,7 @@ FROM mcuadros/ofelia:${OFELIA_VERSION} AS ofelia
 
 FROM alpine:${ALPINE_VERSION}
 
-ARG GO_TASK_VERSION=3.40.1
+ARG GO_TASK_VERSION=3.41.0
 ARG RUNITOR_VERSION=1.3.0-build.4
 
 LABEL ofelia.service=true
